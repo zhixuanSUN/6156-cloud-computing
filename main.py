@@ -134,4 +134,4 @@ async def update_password(buyer_id: int, new_password: str):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8080)
+    uvicorn.run(app, host="54.89.190.246", port=8080)
