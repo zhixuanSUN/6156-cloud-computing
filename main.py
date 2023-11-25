@@ -4,11 +4,9 @@ from fastapi import FastAPI, Response, HTTPException, Request
 import uvicorn
 import psycopg2
 
-from resources.students import StudentsResource
 
 app = FastAPI()
 
-students_resource = StudentsResource()
 
 
 @app.get("/")
@@ -26,12 +24,6 @@ async def say_hello_text(name: str):
     the_message = f"Awesome cloud developer dff9 says Hello {name}"
     rsp = Response(content=the_message, media_type="text/plain")
     return rsp
-
-
-@app.get("/students")
-async def get_students():
-    result = students_resource.get_students()
-    return result
 
 
 endpoint = "database-1.ctxkoq8uo7wh.us-east-1.rds.amazonaws.com"
